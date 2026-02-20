@@ -60,7 +60,8 @@ const Hero = props => {
       id='header'
       style={{ zIndex: 1 }}
       className='w-full h-screen relative bg-black'>
-      <div className='text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full '>
+      // <div className='text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full '>
+      <div className='text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full translate-y-8 md:translate-y-12'>
         {/* 站点标题 */}
         <div className='font-black text-4xl md:text-5xl shadow-text'>
           {siteInfo?.title || siteConfig('TITLE')}
@@ -91,7 +92,8 @@ const Hero = props => {
         id='header-cover'
         alt={siteInfo?.title}
         src={siteInfo?.pageCover}
-        className={`header-cover w-full h-screen object-cover object-center ${siteConfig('HEXO_HOME_NAV_BACKGROUND_IMG_FIXED', null, CONFIG) ? 'fixed' : ''}`}
+        // className={`header-cover w-full h-screen object-cover object-center ${siteConfig('HEXO_HOME_NAV_BACKGROUND_IMG_FIXED', null, CONFIG) ? 'fixed' : ''}`}
+        className={`header-cover w-full h-screen object-cover object-center ${siteConfig('HEXO_HOME_NAV_BACKGROUND_IMG_FIXED', null, CONFIG) ? 'fixed' : ''} filter blur-[2px] scale-[1.03]`}
       />
     </header>
   )
