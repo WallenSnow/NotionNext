@@ -61,7 +61,13 @@ const Hero = props => {
       style={{ zIndex: 1 }}
       className='w-full h-screen relative bg-black'>
       // <div className='text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full '>
-      <div className='text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full translate-y-8 md:translate-y-12'>
+      <div
+        className='text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full translate-y-8 md:translate-y-12'
+        style={{
+          // Reserve room for browser chrome/title bars when users zoom in
+          paddingTop:
+            'calc(env(safe-area-inset-top, 0px) + clamp(3rem, 10vh, 5.5rem))'
+        }}>
         {/* 站点标题 */}
         <div className='font-black text-4xl md:text-5xl shadow-text'>
           {siteInfo?.title || siteConfig('TITLE')}
